@@ -3,7 +3,7 @@
 Docker image for curator_cli.
 
 ```
-docker run --rm ricc/curator-cli:0.1.0 --help
+docker run --rm dtrinf/curator-cli:5.7.6 --help
 ```
 
 https://www.elastic.co/guide/en/elasticsearch/client/curator/current/singleton-cli.html
@@ -12,7 +12,7 @@ https://www.elastic.co/guide/en/elasticsearch/client/curator/current/singleton-c
 ### Example
 
 ```
-docker run --rm curatorcli --dry-run --use_ssl --host "https://myelasticsearch" delete_indices --filter_list '[{"filtertype":"age","source":"creation_date","direction":"older","unit":"days","unit_count":1},{"filtertype":"pattern","kind":"prefix","value":"logstash-alert","exclude":"True"}]'
+docker run --rm curator-cli:5.7.6 --dry-run --use_ssl --host "https://myelasticsearch" delete_indices --filter_list '[{"filtertype":"age","source":"creation_date","direction":"older","unit":"days","unit_count":1},{"filtertype":"pattern","kind":"prefix","value":"logstash-alert","exclude":"True"}]'
 ```
 
 ### Run every 24 hours in docker swarm mode
